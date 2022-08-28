@@ -61,6 +61,9 @@ namespace NDiff
                 return worker.ExecuteAsync(options); 
 
             });
+            Console.WriteLine($"::set-output name=updated-metrics::{true}");
+            Console.WriteLine($"::set-output name=summary-title::{"The differences between the apis."}");
+            Console.WriteLine($"::set-output name=summary-details::{"These are the differences found."}");
 
             Environment.Exit(0);
             //await host.RunAsync();
