@@ -39,7 +39,7 @@ jobs:
         name: ${{ github.repository }}
         branch: ${{ github.ref }}
         dir: ${{ './' }}
-        repository: ${{ github.repositoryUrl }}
+        repository: ${{ 'git://api.github.com/repos/RijadGerguri/CourseApi/zipball' }}
         token: ${{ secrets.TOKEN }}
       
     - name: Create pull request
