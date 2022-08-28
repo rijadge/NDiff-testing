@@ -22,16 +22,10 @@ jobs:
       contents: write
       pull-requests: write
 
-    steps:
+    steps:    
     - uses: actions/checkout@v2
-      with:
-        ref: 'create-pull-request/patch'
-        path: 'patch-path'
-    - uses: actions/checkout@v2
-      with:
-        ref: 'master'
-        path: 'master-path'
     - run: ls
+
 
     - name: 'Print manual run reason'
       if: ${{ github.event_name == 'workflow_dispatch' }}
