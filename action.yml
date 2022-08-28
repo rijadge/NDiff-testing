@@ -41,7 +41,7 @@ outputs:
       'A boolean value, indicating whether or not the action updated metrics.'
 runs:
   using: 'docker'
-  image: 'ngit/Dockerfile'
+  image: 'Dockerfile'
   args:
   - '-o'
   - ${{ inputs.owner }}
