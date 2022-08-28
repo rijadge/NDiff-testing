@@ -25,7 +25,7 @@ namespace NDiff.Services
             _configuration = configuration;
         }
 
-        protected async Task ExecuteAsync(ActionInputs inputs)
+        public async Task ExecuteAsync(ActionInputs inputs)
         {
             var token = inputs.Token; //_configuration.GetSection("Token").Value;
             var repoUri = inputs.Repository; //_configuration.GetSection("RepoUri").Value;

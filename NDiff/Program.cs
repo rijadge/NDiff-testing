@@ -44,16 +44,30 @@ namespace NDiff
                     Environment.Exit(2);
                 });
 
-            await parser.WithParsedAsync(options => StartAnalysisAsync(options, host));
+            await parser.WithParsedAsync(options => {
 
-            var worker = Get<Worker>(host);
-            await worker.StartAsync(System.Threading.CancellationToken.None);
+                Console.WriteLine("FIRST PARSER");
+                return StartAnalysisAsync(options, host);
+
+            });
+           
+
+            await parser.WithParsedAsync(options => {
+
+                Console.WriteLine("WORKER PARSER");
+
+                var worker = Get<Worker>(host);
+
+                return worker.ExecuteAsync(options); 
+
+            });
 
             await host.RunAsync();
         }
 
         private static async Task StartAnalysisAsync(ActionInputs inputs, IHost host)
         {
+            Console.WriteLine("REPOOO;" + inputs.Repository + " _ " + inputs.Token);
             var a = 3;
             var b = 4;
             var c = 5;
