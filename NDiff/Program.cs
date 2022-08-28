@@ -62,8 +62,8 @@ namespace NDiff
 
             });
 
-            await host.RunAsync();
             Environment.Exit(0);
+            //await host.RunAsync();
         }
 
         private static async Task StartAnalysisAsync(ActionInputs inputs, IHost host)
