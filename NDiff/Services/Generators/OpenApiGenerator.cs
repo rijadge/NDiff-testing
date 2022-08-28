@@ -94,6 +94,9 @@ namespace NDiff.Services.Generators
 
 
             var outputString = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Json);
+            Console.WriteLine($"::set-output name=updated-metrics::{true}");
+            Console.WriteLine($"::set-output name=summary-title::{"this is the data"}");
+            Console.WriteLine($"::set-output name=summary-details::{outputString}");
             Console.WriteLine("RESULT::::::::::::::::::::::::::::::::::::::" + outputString);
 
             File.WriteAllText("./test.json", outputString);

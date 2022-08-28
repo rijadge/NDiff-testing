@@ -63,6 +63,7 @@ namespace NDiff
             });
 
             await host.RunAsync();
+            Environment.Exit(0);
         }
 
         private static async Task StartAnalysisAsync(ActionInputs inputs, IHost host)
@@ -76,7 +77,8 @@ namespace NDiff
             var f = 8;
                 
             var g = 9;
-                
+
+            await Task.CompletedTask;
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
