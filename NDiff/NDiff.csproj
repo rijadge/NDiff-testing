@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>dotnet-NDiff-50375CE4-1119-4626-8463-B217D15005D0</UserSecretsId> 
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommandLineParser" Version="2.9.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+        <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+        <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" Version="4.1.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.1.0" />
+        
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+        
+        <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
+        
+        <PackageReference Include="Microsoft.OpenApi" Version="1.3.1" />
+
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\Comparison" />
+    </ItemGroup>
+</Project>
