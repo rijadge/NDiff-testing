@@ -32,12 +32,12 @@ namespace NDiff.Services
             string path = null;
             try
             {
-                if (TryDownloadSolution(token, repoUri, out path))
+                //if (TryDownloadSolution(token, repoUri, out path))
                 {
                     //path = _configuration.GetSection("SolutionUrl").Value;
-                    //uri = "../api";
-                    Console.WriteLine("PATH created!:" + path);
-                    await _solutionAnalyzer.AnalyzeSolutionProjects(path);
+                    uri = "./";
+                    Console.WriteLine("PATH created!:" + uri);
+                    await _solutionAnalyzer.AnalyzeSolutionProjects(uri);
                 }
             }
             catch (Exception e)
@@ -47,7 +47,7 @@ namespace NDiff.Services
             }
             finally
             {
-                path = "../api";
+               // path = "../api";
                 if (!string.IsNullOrEmpty(path))
                     Console.WriteLine("SOL DELETED?:" + DeleteSolution(path));
             }
