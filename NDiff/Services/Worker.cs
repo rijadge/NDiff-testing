@@ -37,7 +37,7 @@ namespace NDiff.Services
                     //path = _configuration.GetSection("SolutionUrl").Value;
                     var uri = inputs.Directory;
                     Console.WriteLine("PATH created!:" + uri);
-                    await _solutionAnalyzer.AnalyzeSolutionProjects(uri);
+                    await _solutionAnalyzer.AnalyzeSolutionProjects(uri, inputs);
                 }
             }
             catch (Exception e)
