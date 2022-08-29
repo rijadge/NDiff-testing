@@ -93,7 +93,7 @@ namespace NDiff.Services.Generators
             };
 
 
-            var outputString = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.YAML);
+            var outputString = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
             
             var fileName = $"CODE_METRICS{new Random().Next(19999)}.md";
             var fullPath = Path.Combine("./", fileName);
