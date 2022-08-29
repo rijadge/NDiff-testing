@@ -25,6 +25,7 @@ namespace NDiff
 
         public static async Task Main(string[] args)
         {
+            Console.WriteLine("LENGTH::::" + args.Length);
             var host = CreateHostBuilder(args).Build();
             
             // first step is to analyze first branch
