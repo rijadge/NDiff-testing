@@ -35,7 +35,7 @@ namespace NDiff.Services
                 //if (TryDownloadSolution(token, repoUri, out path))
                 {
                     //path = _configuration.GetSection("SolutionUrl").Value;
-                    uri = "./";
+                    var uri = "./";
                     Console.WriteLine("PATH created!:" + uri);
                     await _solutionAnalyzer.AnalyzeSolutionProjects(uri);
                 }
