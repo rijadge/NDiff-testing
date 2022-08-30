@@ -93,7 +93,7 @@ namespace NDiff.Services.Generators
             };
 
 
-            var outputString = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
+            var outputString = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Json);
             
             var fileName = $"CODE_METRICS{new Random().Next(19999)}.md";
             var fullPath = Path.Combine("./", fileName);
@@ -103,7 +103,7 @@ namespace NDiff.Services.Generators
 
             Console.WriteLine("RESULT::::::::::::::::::::::::::::::::::::::" + outputString);
 
-            File.WriteAllText(dir+"/test.yaml", outputString);
+            File.WriteAllText(dir+"/test.json", outputString);
         }
 
         /// <summary>
