@@ -1,4 +1,6 @@
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
+using NDiff.Action;
 using NDiff.Helpers;
 using NDiff.Services.Analyzers.ProjectAnalyzers;
 using NDiff.Services.Generators;
@@ -19,7 +21,7 @@ namespace NDiff.Services.Analyzers.SolutionAnalyzers
             _analyzedClassesState = analyzedClassesState;
         }
 
-        public async Task AnalyzeSolutionProjects(string basePath)
+        public async Task AnalyzeSolutionProjects(string basePath, ActionInputs inputs)
         {
             await LoadSolutionProjects(basePath);
 
@@ -30,12 +32,14 @@ namespace NDiff.Services.Analyzers.SolutionAnalyzers
             {
                 _projectAnalyzer.AnalyzeProject(project);
             }
-
+            var paths = new OpenApiPaths();
             foreach (var analyzedClassesValue in _analyzedClassesState.GetStateValues())
             {
                 _openApiGenerator.ClassInformation = analyzedClassesValue;
-                _openApiGenerator.GenerateOpenApi();
+                _openApiGenerator.GenerateOpenApi(paths); 
             }
+            _openApiGenerator.CreateDocument(paths, inputs.Directory);
+
         }
     }
 }

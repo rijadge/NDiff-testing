@@ -50,7 +50,7 @@ namespace NDiff.Services.Generators
             return classInformation;
         }
 
-        private void CreateDocument(OpenApiPaths responses)
+        public void CreateDocument(OpenApiPaths responses, string dir)
         {
             var document = new OpenApiDocument
             {
@@ -103,7 +103,7 @@ namespace NDiff.Services.Generators
 
             Console.WriteLine("RESULT::::::::::::::::::::::::::::::::::::::" + outputString);
 
-            File.WriteAllText("./test.json", outputString);
+            File.WriteAllText(dir+"/test.json", outputString);
         }
 
         /// <summary>
@@ -300,9 +300,9 @@ namespace NDiff.Services.Generators
                    firstParameterFromILocationInParent.In != null;
         }
 
-        public void GenerateOpenApi()
+        public void GenerateOpenApi(OpenApiPaths paths)
         {
-            var paths = new OpenApiPaths();
+            //var paths = new OpenApiPaths();
 
             var components = _componentGenerator.GenerateComponents();
 
@@ -366,7 +366,7 @@ namespace NDiff.Services.Generators
                 RouteGenerator.GenerateRoutes(ClassInformation, method, apiOperation, paths, components);
             }
 
-            CreateDocument(paths);
+            
         }
 
         /// <summary>

@@ -1,3 +1,4 @@
+using NDiff.Action;
 using System.Threading.Tasks;
 
 namespace NDiff.Services.Analyzers.SolutionAnalyzers
@@ -9,6 +10,6 @@ namespace NDiff.Services.Analyzers.SolutionAnalyzers
         /// </summary>
         /// <param name="basePath">The base path of the solution.</param>
         /// <returns></returns>
-        Task AnalyzeSolutionProjects(string basePath);
+        Task AnalyzeSolutionProjects(string basePath, ActionInputs inputs);
     }
 }
