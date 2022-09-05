@@ -22,7 +22,15 @@ jobs:
       contents: write
       pull-requests: write
 
-    steps:    
+    steps:
+    - name: Create github issues
+      uses: rijadge/generate-issues@v2.0
+      with:
+        github-token: ${{ github.token }}
+        repositories: '["rijadge/NDiff-testing", "rijadge/ndiff-composite"]'
+        title: "The title of issue"
+        body: "The body of the issue"
+        
     - uses: actions/checkout@v2
     - run: ls
 
